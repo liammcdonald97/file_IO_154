@@ -17,7 +17,15 @@ namespace file_IO_154
             {
                 f1.WriteLine(userInput);
             }
-            System.Console.WriteLine("You entered: " + userInput);
+            using (StreamReader f2 = File.OpenText(@"C:\Users\liamm\Logs\log1.txt"))
+            {
+                string output1;
+                while((output1 = f2.ReadLine()) != null)
+                {
+                    Console.WriteLine("You entered: {0} ", output1);
+                }              
+            }
+            
             Console.ReadLine();
         }
     }
